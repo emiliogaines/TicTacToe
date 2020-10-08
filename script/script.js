@@ -80,6 +80,7 @@ function initGame() {
         initPlayerPicker();
     });
     $("#victory").hide();
+    $("#cpuPlaying").hide();
     $("#victoryText").css("color", "green");
     gameOver = false;
     draw = false;
@@ -145,7 +146,9 @@ function sleep(ms) {
 }
 
 async function playAI() {
+    $("#cpuPlaying").show();
     await sleep(1500);
+    $("#cpuPlaying").hide();
     var count = 0;
     var freetile;
     var goodTileSpots = [];
